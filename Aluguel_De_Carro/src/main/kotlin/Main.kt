@@ -1,6 +1,4 @@
-import java.lang.NumberFormatException
 import java.text.SimpleDateFormat
-
 import java.util.*
 
 fun main() {
@@ -8,10 +6,11 @@ fun main() {
     val diaDevolucao:Date
 
     try {
+        val formato = SimpleDateFormat("dd/MM/yyyy hh:mm")
         println("Dia de inicio:  DD/MM/YYYY HH:MM")
-        diaInicio = Date(readLine())
+        diaInicio = formato.parse(readLine()) as Date
         println("Dia da devolução:  DD/MM/YYYY HH:MM")
-        diaDevolucao = Date(readLine())
+        diaDevolucao = formato.parse(readLine()) as Date
 
         if(diaDevolucao.before(diaInicio)){
             throw ExcessaoDataImpossivel("Wow, você consegue voltar no tempo. Que maneiro!")
