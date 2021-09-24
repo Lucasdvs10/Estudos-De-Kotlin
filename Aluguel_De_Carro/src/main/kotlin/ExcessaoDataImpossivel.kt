@@ -1,0 +1,1 @@
+class ExcessaoDataImpossivel (messagem:String): Exception(messagem)
